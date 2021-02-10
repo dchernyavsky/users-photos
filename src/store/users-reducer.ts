@@ -1,6 +1,7 @@
-import {UserType} from "../types/entities";
+import {UserType} from '../types/entities'
 import {usersAPI} from '../api/api'
-import {Dispatch} from "redux";
+import {Dispatch} from 'redux'
+import {setIsFetching} from './loading-reducer'
 
 export enum ACTION_TYPES {
   SET_USERS = 'USERS/SET_USERS'
@@ -29,7 +30,9 @@ export const setUsers = (users: Array<UserType>) => ({
 })
 
 export const getUsers = () => (dispatch: Dispatch<any>) => {
+  dispatch(setIsFetching(true))
   usersAPI.getUsers()
     .then(res => dispatch(setUsers(res.data)))
     .catch(rej => console.log(rej))
+    .finally(() => dispatch(setIsFetching(false)))
 }

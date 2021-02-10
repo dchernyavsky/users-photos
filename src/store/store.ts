@@ -1,10 +1,15 @@
-import {applyMiddleware, combineReducers, createStore} from "redux";
-import thunk from "redux-thunk";
-import {usersReducer} from "./users-reducer";
-
+import {applyMiddleware, combineReducers, createStore} from 'redux'
+import thunk from 'redux-thunk'
+import {usersReducer} from './users-reducer'
+import {albumsReducer} from './albums-reducer'
+import {photosReducer} from './photos-reducer'
+import {loadingReducer} from './loading-reducer'
 
 const reducer = combineReducers({
-  users: usersReducer
+  users: usersReducer,
+  albums: albumsReducer,
+  photos: photosReducer,
+  loading: loadingReducer
 })
 
 export type StateType = ReturnType<typeof reducer>

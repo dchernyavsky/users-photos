@@ -35,3 +35,7 @@ export type PhotoType = {
   "url": string | null
   "thumbnailUrl": string | null
 }
+
+export type LoadingType = {
+  isFetching: boolean
+}

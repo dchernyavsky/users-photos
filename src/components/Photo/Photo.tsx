@@ -1,14 +1,19 @@
-import React, { FunctionComponent } from 'react';
+import React, {FunctionComponent} from 'react'
+import {PhotoType} from '../../types/entities'
+import style from './Photo.module.css'
 
-interface OwnProps {}
+interface OwnProps {
+  photo: PhotoType
+}
 
 type Props = OwnProps;
 
 const Photo: FunctionComponent<Props> = (props) => {
+  return (
+    <div className={style.photo}>
+      <h2>{props.photo.title}</h2>
+      {props.photo.thumbnailUrl && <img className={style.photoPreview} src={props.photo.thumbnailUrl} alt=''/>}
+    </div>)
+}
 
-  return (<div>
-
-  </div>);
-};
-
-export default Photo;
+export default Photo

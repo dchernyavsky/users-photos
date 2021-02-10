@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
-import style from './User.module.css'
 import {UserType} from '../../types/entities'
+import style from './User.module.css'
 
 interface OwnProps {
   user: UserType
@@ -9,9 +9,11 @@ interface OwnProps {
 type Props = OwnProps;
 
 const User: FunctionComponent<Props> = (props) => {
-  return (<div className={style.user}>
-    {props.user.name}
-  </div>)
+  return (
+    <div className={style.user}>
+      <h2>{props.user.username}</h2>
+      <div>{props.user.name}</div>
+    </div>)
 }
 
 export default User
