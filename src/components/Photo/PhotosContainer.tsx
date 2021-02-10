@@ -21,7 +21,7 @@ const PhotosContainer = () => {
     {
       isFetching
         ? <Preloader/>
-        : photos.map(photo => <Photo photo={photo}/>)
+        : photos.map(photo => <Photo key={photo.id} photo={photo}/>)
     }
   </div>)
 }

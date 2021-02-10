@@ -11,7 +11,7 @@ type Props = OwnProps;
 const Photo: FunctionComponent<Props> = (props) => {
   return (
     <div className={style.photo}>
-      <h2>{props.photo.title}</h2>
+      <h4>{props.photo.title}</h4>
       {props.photo.thumbnailUrl && <img className={style.photoPreview} src={props.photo.thumbnailUrl} alt=''/>}
     </div>)
 }
