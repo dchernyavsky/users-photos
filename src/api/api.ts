@@ -21,8 +21,5 @@ export const albumsAPI = {
 export const photosAPI = {
   getPhotos(albumId: string) {
     return axiosInstance.get<Array<PhotoType>>(`photos?albumId=${albumId}`)
-  },
-  getPhoto(photoId: string) {
-    return axiosInstance.get<PhotoType>(`photos/${photoId}`)
   }
 }

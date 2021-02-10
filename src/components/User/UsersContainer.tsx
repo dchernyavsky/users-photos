@@ -29,8 +29,7 @@ const UsersContainer = () => {
               user={user}
             />
           </NavLink>
-        }
-        )
+        })
     }
   </div>)
 }

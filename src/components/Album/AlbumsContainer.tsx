@@ -1,7 +1,7 @@
 import React, {FunctionComponent, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {StateType} from '../../store/store'
-import {AlbumType, LoadingType} from '../../types/entities'
+import {AlbumType} from '../../types/entities'
 import containerStyle from '../../common/styles/Container.module.css'
 import Album from './Album'
 import {getAlbums} from '../../store/albums-reducer'
