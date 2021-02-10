@@ -1,19 +1,9 @@
-.photoPreview  {
+.photoPreview {
   width: 150px;
-}
-
-* {
-  text-decoration: none;
-  color: black;
 }
 
 .photo {
   display: block;
   margin: 10px;
   padding: 5px;
-}
-
-
-.photo:hover {
-  cursor: pointer;
 }

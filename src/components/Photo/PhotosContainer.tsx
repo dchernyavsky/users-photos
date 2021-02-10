@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {StateType} from '../../store/store'
 import {PhotoType} from '../../types/entities'
 import containerStyle from '../../common/styles/Container.module.css'
-import {NavLink, useParams} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 import Preloader from '../Preloader/Preloader'
 
 const PhotosContainer = () => {
@@ -21,9 +21,7 @@ const PhotosContainer = () => {
     {
       isFetching
         ? <Preloader/>
-        : photos.map(photo => <NavLink key={photo.id} to={`../photo/${photo.id}`}>
-          <Photo photo={photo}/>
-        </NavLink>)
+        : photos.map(photo => <Photo photo={photo}/>)
     }
   </div>)
 }
