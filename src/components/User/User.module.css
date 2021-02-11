@@ -3,6 +3,13 @@
   color: black;
 }
 
+.title {
+  display: block;
+  background-color: azure;
+  width: 80%;
+  margin: 0 auto;
+}
+
 .user {
   display: block;
   height: 200px;

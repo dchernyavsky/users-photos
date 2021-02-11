@@ -7,30 +7,35 @@ import Album from './Album'
 import {getAlbums} from '../../store/albums-reducer'
 import {NavLink, useParams} from 'react-router-dom'
 import Preloader from '../Preloader/Preloader'
+import styles from '../User/User.module.css'
 
 const AlbumsContainer: FunctionComponent = () => {
   const userId = useParams<{ userId: string }>()
   const isFetching = useSelector<StateType, boolean>(state => state.loading.isFetching)
   const dispatch = useDispatch()
   const albums = useSelector<StateType, Array<AlbumType>>(state => state.albums)
+
   useEffect(() => {
     dispatch(getAlbums(userId.userId))
   }, [dispatch, userId.userId])
 
-  return (<div className={containerStyle.container}>
-    {
-      isFetching
-        ? <Preloader/>
-        : albums.map(album => {
-          return <NavLink
-            to={`/photos/${album.id}`}
-            key={album.id}
-          >
-            <Album album={album}/>
-          </NavLink>
-        })
-    }
-  </div>)
+  return (<>
+    <h2 className={styles.title}>Select Album:</h2>
+    <div className={containerStyle.container}>
+      {
+        isFetching
+          ? <Preloader/>
+          : albums.map(album => {
+            return <NavLink
+              to={`/photos/${album.id}`}
+              key={album.id}
+            >
+              <Album album={album}/>
+            </NavLink>
+          })
+      }
+    </div>
+  </>)
 }
 
 export default AlbumsContainer

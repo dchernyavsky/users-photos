@@ -14,12 +14,15 @@ export const usersAPI = {
 
 export const albumsAPI = {
   getAlbums(userId: string) {
-    return axiosInstance.get<Array<AlbumType>>(`users/${userId}/albums`)
+    return axiosInstance.get<Array<AlbumType>>(`albums?userId=${userId}`)
   }
 }
 
 export const photosAPI = {
   getPhotos(albumId: string) {
     return axiosInstance.get<Array<PhotoType>>(`photos?albumId=${albumId}`)
+  },
+  getPhoto(photoId: string) {
+    return axiosInstance.get<PhotoType>(`photos/${photoId}`)
   }
 }

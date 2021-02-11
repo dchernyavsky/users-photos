@@ -3,13 +3,16 @@ import './App.css'
 import UsersContainer from './components/User/UsersContainer'
 import {BrowserRouter, Redirect, Route} from 'react-router-dom'
 import AlbumsContainer from './components/Album/AlbumsContainer'
-import PhotosContainer from './components/Photo/PhotosContainer'
+import PhotosPreviewContainer from './components/Photo/PhotosPreviewContainer'
+import Header from './components/Header/Header'
+import PhotoContainer from './components/Photo/PhotoContainer'
 
 function App() {
 
   return (
     <div className="App">
       <BrowserRouter>
+        <Header/>
         <Route
           path='/users'
           component={UsersContainer}
@@ -20,7 +23,11 @@ function App() {
         />
         <Route
           path='/photos/:albumId?'
-          component={PhotosContainer}
+          component={PhotosPreviewContainer}
+        />
+        <Route
+          path='/photo/:photoId?'
+          component={PhotoContainer}
         />
         <Route
           exact
