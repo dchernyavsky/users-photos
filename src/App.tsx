@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import UsersContainer from './components/User/UsersContainer'
-import {BrowserRouter, Redirect, Route} from 'react-router-dom'
+import {HashRouter, Redirect, Route} from 'react-router-dom'
 import AlbumsContainer from './components/Album/AlbumsContainer'
 import PhotosPreviewContainer from './components/Photo/PhotosPreviewContainer'
 import Header from './components/Header/Header'
@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Header/>
         <Route
           path='/users'
@@ -35,7 +35,7 @@ function App() {
         >
           <Redirect to="/users"/>
         </Route>
-      </ BrowserRouter>
+      </ HashRouter>
     </div>
   )
 }

@@ -19,4 +19,4 @@ export type StateType = ReturnType<typeof reducer>
 export const store = createStore(reducer, applyMiddleware(thunk))
 
 // @ts-ignore
-window.store = store
+// window.store = store
