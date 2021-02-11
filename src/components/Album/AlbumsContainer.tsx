@@ -20,6 +20,9 @@ const AlbumsContainer: FunctionComponent = () => {
   }, [dispatch, userId.userId])
 
   return (<>
+    <NavLink to={`../users`}>
+      <h4 className={styles.title}>Up To Users</h4>
+    </NavLink>
     <h2 className={styles.title}>Select Album:</h2>
     <div className={containerStyle.container}>
       {

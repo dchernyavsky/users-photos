@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {StateType} from '../../store/store'
 import {PhotoType} from '../../types/entities'
 import containerStyle from '../../common/styles/Container.module.css'
-import {useParams} from 'react-router-dom'
+import {NavLink, useParams} from 'react-router-dom'
 import Preloader from '../Preloader/Preloader'
 import styles from '../User/User.module.css'
 import {getPhoto} from '../../store/photo-reducer'
@@ -20,7 +20,12 @@ const PhotosPreviewContainer = () => {
   }, [dispatch, photoId.photoId])
 
   return (<>
-    <h2 className={styles.title}>{photo.title}</h2>
+    <NavLink to={`../photos/${photo.albumId}`}>
+      <h4 className={styles.title}>Up To Photos</h4>
+    </NavLink>
+    <h2 className={styles.title}>
+      {photo.title}
+    </h2>
     <div className={containerStyle.container}>
       {
         isFetching
